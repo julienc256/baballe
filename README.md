@@ -15,11 +15,11 @@ More informations on my game are available here : http://julien.coppolani.free.f
 
 # Screenshots
 
-![screenshot 1](/readme/baballe_01.png)
+![screenshot 1](/readme/baballe_01.jpg)
 
-![screenshot 2](/readme/baballe_02.png)
+![screenshot 2](/readme/baballe_02.jpg)
 
-![screenshot 3](/readme/baballe_03.png)
+![screenshot 3](/readme/baballe_03.jpg)
 
 # Running
 
