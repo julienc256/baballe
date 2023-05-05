@@ -1,0 +1,229 @@
+<html>
+<!-- Date de création: 16/09/01 -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Aide</title>
+<meta name="Description" content="baballe jeu game 3d glut">
+<meta name="Keywords" content="baballe 3d game opengl game jeu 3d glut">
+<meta name="Author" content="julien coppolani">
+</head>
+<body>
+<center>
+<br>
+<a name="top"></a>
+<font size = +3><b>Baballe</b></font>&nbsp;&nbsp;v1.00<br>
+<br>
+<a href="#intro">Introduction</a>  |
+<a href="#perf">Performances</a>  | 
+<a href="#controles">Contrôles</a>  | 
+<a href="#edition">Editer son circuit</a>  | 
+<a href="#ameliorations">Améliorations futures</a>  | 
+<a href="#auteur">Auteur</a>
+</center>
+<br><br><br><br>
+<a name="intro"></a>
+<TABLE WIDTH=100% BORDER=0 CELLSPACING=1 BGCOLOR="0000FF">
+<TR><TD BGCOLOR="#cbcbcb"><FONT FACE="Arial" COLOR="#000000">&nbsp; <b>I</b>ntroduction</FONT></TD></TR>
+</TABLE><br>
+Ce jeu est l'adaptation du jeu <b>babal</b> développé sur les calculatrices HP-48 par U-FOOT et disponible sur sa page web :
+<a href = http://www.ufoot.org/babal/>http://www.ufoot.org/babal/</a>.<br>
+Le principe est de diriger une balle le plus loin possible sur un parcours composé de dalles carrées tout en allant le plus vite possible.<br><br>
+Je l'ai programmé en C avec la librairie <a href="http://www.opengl.org/developers/documentation/glut.html">GLUT</a> (OpenGL Utility Toolkit)<br>
+<br>
+<i>Remarque :</i> le jeu babal de U-FOOT est inspiré du  jeu <b>TrailBlazer</b> (<a href=http://s64.emuunlim.com/reviews/trailblazer.htm><i>Plus d'infos</i></a>) qui existait sur les Commodore 64.
+Il existe au moins 2 remakes de ce dernier : (en freeware)<br>
+- <b>Void Runner</b>. Page de l'auteur : <a href="http://mordred.hit.bg/vr.htm" OnMouseOver="self.status='A essayer !';return true;" 
+OnMouseOut="self.status='A essayer aussi !';return true;">mordred.hit.bg/vr.htm</a><br>
+- <b>Blazing Trails</b>. Page de l'auteur : <a href=http://www.btinternet.com/~Allan.Bentham/blazingtrails.htm OnMouseOver="self.status='vous y trouverez également le jeu original (trailblazer) ainsi qu un émulateur C64 pour le faire tourner';return true;" 
+OnMouseOut="self.status=' ';return true;">www.btinternet.com/~Allan.Bentham/blazingtrails.htm</a>.<br>
+<br>
+<br>
+<a name="perf"></a>
+<TABLE WIDTH=100% BORDER=0 CELLSPACING=1 BGCOLOR="0000FF">
+<TR><TD BGCOLOR="#cbcbcb"><FONT FACE="Arial" COLOR="#000000">&nbsp; <b>P</b>erformances</FONT></TD></TR>
+</TABLE><br>
+Les performances sont démultipliées si l'on possède une carte graphique avec accélération 3d.<br>
+Le jeu est très fluide sur un pentium 75 mais avec une voodoo 3 :)<br>
+Pour augmenter la fluidité du jeu, on peut :<br>
+- Réduire la taille de la fenêtre (de taille 512 * 512 par défaut)<br>
+- Cacher l'affichage du score<br>
+- Réduire le nombre de facettes de la sphère<br>
+<br><br>
+<a name="controles"></a>
+<TABLE WIDTH=100% BORDER=0 CELLSPACING=1 BGCOLOR="0000FF">
+<TR><TD BGCOLOR="#cbcbcb"><FONT FACE="Arial" COLOR="#000000"><a name="intro">&nbsp; <b>C</b>ontrôles</a></FONT></TD></TR>
+</TABLE><br>
+Le jeu se joue au clavier, mais la plupart des options sont accessibles avec un clic droit de la souris.<br>
+<br>
+<li>Au clavier :<br>
+<ul>
+<table border="0" cellspacing="1" bgcolor="black">
+	<!-- <tr><td>Clavier</td></tr> -->
+	<tr>
+		<td width="160" bgcolor="#E0E0E0"><font size="-1">&nbsp;<b>Touche</b></font></td>
+		<td bgcolor="#E0E0E0"><font size="-1">&nbsp;<b>Fonction</b></font></td>
+	</tr>
+	<tr>
+		<td bgcolor="white">&nbsp;<b>touches de direction</b></td>
+		<td bgcolor="white">&nbsp;Se diriger</td>
+	</tr>
+	<tr>
+		<td bgcolor="white">&nbsp;<b>Espace</b></td>
+		<td bgcolor="white">&nbsp;Sauter</td>
+	</tr>
+	<tr>
+		<td bgcolor="white">&nbsp;<b>p</b></td>
+		<td bgcolor="white">&nbsp;Pause</td>
+	</tr>
+	<tr>
+		<td bgcolor="white">&nbsp;<b>i</b></td>
+		<td bgcolor="white">&nbsp;Inverser la couleur de fond (noir->blanc ou blanc->noir)</td>
+	</tr>
+	<tr>
+		<td bgcolor="white">&nbsp;<b>q</b></td>
+		<td bgcolor="white">&nbsp;quitter</td>
+	</tr>
+	<tr>
+		<td bgcolor="white">&nbsp;<b>F5</b></td>
+		<td bgcolor="white">&nbsp;Afficher le tableau de bord (vitesse, temps écoulé, distance parcourue, etc...)</td>
+	</tr>
+	<tr>
+		<td bgcolor="white">&nbsp;<b>F6</b></td>
+		<td bgcolor="white">&nbsp;n'afficher que la vitesse instantanée (pour alléger l'affichage)</td>
+	</tr>
+	<tr>
+		<td bgcolor="white">&nbsp;<b>F7</b></td>
+		<td bgcolor="white">&nbsp;afficher les high-scores</td>
+	</tr>
+	<tr>
+		<td bgcolor="white">&nbsp;<b>F9</b></td>
+		<td bgcolor="white">&nbsp;commencer/terminer l'enregistrement de la partie</td>
+	</tr>
+	<tr>
+		<td bgcolor="white">&nbsp;<b>F10</b></td>
+		<td bgcolor="white">&nbsp;visualiser/arrêter la partie enregistrée. (attention ! risques de plantages)</td>
+	</tr>
+</table></ul><br>
+<li>A la souris :<br>
+<ul>
+<table border="0" cellspacing="1" bgcolor="black">
+	<!-- <tr><td>Clavier</td></tr> -->
+	<tr>
+		<td width="160" bgcolor="#E0E0E0"><font size="-1">&nbsp;<b>Bouton</b></font></td>
+		<td bgcolor="#E0E0E0"><font size="-1">&nbsp;<b>Fonction</b></font></td>
+	</tr>	
+	<tr>
+		<td bgcolor="white">&nbsp;<b>gauche</b></td>
+		<td bgcolor="white">&nbsp;changer l'angle de vue de la caméra (maintenir le bouton appuyé tout en déplaçant la souris)</b></td>
+	</tr>
+	<tr>
+		<td bgcolor="white">&nbsp;<b>droit</b></td>
+		<td bgcolor="white">&nbsp;accès au menu</b></td>
+	</tr>
+</table></ul><br>
+
+<li>Le menu en détails :<br>
+<ul>
+<table border="0" cellspacing="1" bgcolor="black" width="90%">
+	<tr>
+		<td width="160" bgcolor="#E0E0E0"><font size="-1">&nbsp;<b>Option</b></font></td>
+		<td bgcolor="#E0E0E0"><font size="-1">&nbsp;<b>Fonction</b></font></td>
+	</tr>
+	<tr>
+		<td valign="top" bgcolor="white"><b>&nbsp;Invert colors</b></td>
+		<td bgcolor="white">&nbsp;Même chose que la touche [i] du clavier</td>
+	</tr>
+	<tr>
+		<td valign="top" bgcolor="white"><b>&nbsp;Display/Hide FPS</b></td>
+		<td bgcolor="white">&nbsp;Afficher/Masquer le FPS (frames per second ou images par secondes) dans la barre de titre</td>
+	</tr>
+	<tr>
+		<td valign="top" bgcolor="white"><b>&nbsp;Display/Hide Score</b></td>
+		<td bgcolor="white">&nbsp;Affiche/Masque le score (masqué par défaut) ; Rq : l'afficher ralentit un peu les performances</td>
+	</tr>
+	<tr>
+		<td valign="top" bgcolor="white"><b>&nbsp;Bouncing on/off</b></td>
+		<td bgcolor="white">&nbsp;Active/désactive le rebond : si activé, la balle fait 3 rebonds. (par défaut désactivé)</td>
+	</tr>
+	<tr>
+		<td valign="top" bgcolor="white"><b>&nbsp;Accel on/off</b></td>
+		<td bgcolor="white">&nbsp;Lorsque activé, on ne peut pas modifier la trajectoire de la balle lorsqu'elle n'est pas au sol !</td>
+	</tr>
+	<tr>
+		<td valign="top" bgcolor="white"><b>&nbsp;Restart</b></td>
+		<td bgcolor="white">&nbsp;Redémarre le niveau au point de départ</td>
+	</tr>
+	<tr>
+   		<td valign="top" bgcolor="white"><b>&nbsp;Preferences »</b></td>
+		<td bgcolor="white">&nbsp;Permet de charger ou de sauvegarder les préférences du joueur (texture du terrain, couleur de la balle, ...)</td>
+	</tr>		
+	<tr>
+		<td valign="top" bgcolor="white"><b>&nbsp;Play »</b></td>
+		<td bgcolor="white">&nbsp;Permet de Commencer l'enregistrement de la partie ou la lecture de la dernière partie enregistrée<br></td>
+	</tr>
+	<tr>
+		<td valign="top" bgcolor="white"><b>&nbsp;Acceleration »</b></td>
+		<td bgcolor="white">&nbsp;Permet de choisir l'accélération de la balle (5 par défaut) ainsi que la gravitation (10 par défaut)</td>
+	</tr>
+	<tr>
+		<td valign="top" bgcolor="white"><b>&nbsp;View »</b></td>
+		<td bgcolor="white">&nbsp;Choix entre une vue courte (par défaut) ou une vue un peu plus éloignée</td>
+	</tr>
+	<tr>
+		<td valign="top" bgcolor="white"><b>&nbsp;Sphere »</b></td>
+		<td bgcolor="white">&nbsp;Choix de sa couleur (rouge par défaut), de sa taille (0.375 par défaut), ainsi que de sa résolution en nombre de facettes (par défaut 8 * 12 = 96 facettes)</td>
+	</tr>
+	<tr>
+		<td valign="top" bgcolor="white"><b>&nbsp;Texture »</b></td>
+		<td bgcolor="white">&nbsp;Choix de 11 textures différentes (par défaut c'est la première)</td>
+	</tr>
+	<tr>
+		<td valign="top" bgcolor="white"><b>&nbsp;Circuits »</b></td>
+		<td bgcolor="white">&nbsp;Choix parmi 6 circuits.<br>
+		&nbsp;Note : pour accéder à un circuit, il faut avoir terminé les précédents !</td>
+	</tr>	
+</table></ul><br>
+<br>
+<br>
+<a name="edition"></a>
+<TABLE WIDTH=100% BORDER=0 CELLSPACING=1 BGCOLOR="0000FF">
+	<TR><TD BGCOLOR="#cbcbcb"><FONT FACE="Arial" COLOR="#000000">&nbsp; <b>E</b>diter son circuit</FONT></TD></TR>
+</TABLE>
+<br>
+Vous avez la possibilité de créer votre propre circuit.<br>
+Pour cela, il suffit de créer une image de fond blanc et de largeur 16 pixels. (longueur de votre choix)<br>
+Puis, dessinez votre circuit avec la couleur noire ou rouge. (chaque pixel noir ou rouge de l'image représentera une dalle dans le jeu)<br>
+La couleur rouge sert de point de repère dans le circuit lorsque l'on perd : c'est au point de repère le plus proche en arrière que la balle sera remise. S'il n'y en a pas, c'est au début que l'on recommence.<br>
+Réduisez à <b>16</b> le nombre de couleurs, choisissez la <b>palette WINDOWS</b> puis enregistrez votre circuit au format <b>BMP</b>, et donnez-lui comme nom : <i><b>circuit_perso.bmp</b></i><br>
+Enfin, enregistrez le fichier dans le même répertoire que l'exécutable.<br>
+<br>
+<table border="0" bgcolor="#eeeeee" cellpadding="0" cellspacing="0"><tr><td>Sous Microsoft Paint :</td></tr></table>
+Sélectionnez votre circuit (la sélection doit être de 16 pixels de large), puis faites Menu Edition > Copier vers...
+Une boite standard windows d'enregistrement apparait. Choisissez comme type <b>Bitmap 16 couleurs</b>, comme nom <b>circuit_perso.bmp</b>, sélectionnez le répertoire du jeu baballe, puis faites enregistrer !<br>
+<br><br>
+<a name="ameliorations"></a>
+<TABLE WIDTH=100% BORDER=0 CELLSPACING=1 BGCOLOR="0000FF">
+<TR><TD BGCOLOR="#cbcbcb"><FONT FACE="Arial" COLOR="#000000">&nbsp; <b>A</b>méliorations futures</FONT></TD></TR>
+</TABLE><br>
+(si j'ai le temps et la motivation)<br>
+- rotation correcte de la sphère<br>
+- rajouter un arrière-plan<br>
+- améliorer les circuits<br>
+- etc, etc...<br>
+<br>
+Toute suggestion est la bienvenue !<br>
+<br>
+<br>
+<a name="auteur"></a>
+<TABLE WIDTH=100% BORDER=0 CELLSPACING=1 BGCOLOR="0000FF">
+<TR><TD BGCOLOR="#cbcbcb"><FONT FACE="Arial" COLOR="#000000">&nbsp; <b>A</b>uteur</FONT></TD></TR>
+</TABLE><br>
+Julien Coppolani (alias <b>jcop</b>)<br>
+e-mail : <a href=mailto:jcop@noos.fr>jcop@noos.fr</a><br>
+<!-- homepage : <a href=http://mapage.noos.fr/jcop>http://mapage.noos.fr/jcop</a><br> -->
+<div align="right"><a href="#top">Haut</a></div><br><br>
+<div align="center">
+
+</div>
+</body>
+</html>
